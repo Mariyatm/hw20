@@ -27,7 +27,7 @@ class TestmovieService:
 
         assert movie is not None
         assert movie.id is not None
-        assert isinstance(movie.name, str)
+        assert isinstance(movie.title, str)
 
     def test_get_all(self):
         movies = self.movie_service.get_all()
@@ -35,13 +35,13 @@ class TestmovieService:
         assert len(movies) > 0
 
     def test_create(self):
-        movie_data = {"id": 1, "name": "movie"}
+        movie_data = {"id": 1, "title": "movie"}
         movie = self.movie_service.create(movie_data)
 
         assert movie is not None
 
     def test_update(self):
-        movie_data = {"id": 1, "name": "movie"}
+        movie_data = {"id": 1, "title": "movie"}
         movie = self.movie_service.update(movie_data)
 
         assert movie is not None
